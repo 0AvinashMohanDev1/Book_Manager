@@ -4,9 +4,11 @@ require("dotenv").config();
 const protect = async (req, res, next) => {
   let token;
   let temp= await redisClient.get(req._remoteAddress);
+  console.log({temp});
   if (temp||req.headers.authorization) {
     token = `${temp}`||req.headers.authorization.split(' ')[1];
   }
+  console.log({token});
   if (!token) {
     return res.status(401).json({ message: 'Not authorized, no token' });
   }

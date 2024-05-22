@@ -24,12 +24,12 @@ Book Manager is an application to manage books and users. This document provides
 
 ### Technology Stack
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Authentication**: JSON Web Tokens (JWT)
+- **Database**: MongoDB, Redis
+- **Authentication**: JSON Web Tokens (JWT), bcrypt
 - **Documentation**: Swagger for API documentation
 
 ### How to Use
-1. **Swagger Documentation**: Access the API documentation at [Swagger UI](http://localhost:3000/api-docs/#/).
+1. **Swagger Documentation**: Access the API documentation at [Swagger UI](https://bookmanager-production-2c6f.up.railway.app/api-docs/#/).
 2. **User Registration and Login**: Use the provided endpoints to register a new user and log in to receive a token.
 3. **Manage Books**: Add, view, search, and delete books using the respective endpoints.
 
@@ -43,7 +43,11 @@ Book Manager is an application to manage books and users. This document provides
 **Book Manager** aims to streamline the process of managing users and books, offering a secure and efficient solution for libraries, book clubs, and personal collections.
 
 ## Swagger URL
-Access the API documentation here: [Swagger UI](http://localhost:3000/api-docs/#/)
+Access the API documentation here: [Swagger UI](https://bookmanager-production-2c6f.up.railway.app/api-docs/#/)
+
+## Base URL
+[Book Managment](https://bookmanager-production-2c6f.up.railway.app/)
+For local run: [http://localhost:3000/api/]
 
 ## User Endpoints
 
@@ -104,35 +108,61 @@ Access the API documentation here: [Swagger UI](http://localhost:3000/api-docs/#
   {
     "users": [
       {
-        "_id": "664c172e620da48497071289",
-        "name": "Avinash",
-        "email": "avinash@gmail.com",
-        "role": "Admin"
-      },
-      {
-        "_id": "664c2917032b6b2e40d9a39a",
-        "name": "Admin",
-        "email": "admin@gmail.com",
-        "role": "Admin"
-      },
-      {
-        "_id": "664c3dab5a2c87fe28d0e4d6",
-        "name": "User",
-        "email": "user@gmail.com",
-        "role": "Reader"
-      },
-      {
-        "_id": "664c3fa7549ffae8f5e046d8",
-        "name": "Author",
-        "email": "author@gmail.com",
-        "role": "Author"
-      },
-      {
-        "_id": "664c608c8dc40e6359831687",
-        "name": "User1",
-        "email": "user1@gmail.com",
-        "role": "Reader"
-      }
+      "_id": "664c172e620da48497071289",
+      "name": "Avinash",
+      "email": "avinash@gmail.com",
+      "password": "$2b$10$mrW/zgeifm8yyW7Rp6NPWe1EqSaZT5cD2FzSybeBaI1K4zEmU9zrG",
+      "role": "Admin",
+      "__v": 0
+    },
+    {
+      "_id": "664c2917032b6b2e40d9a39a",
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "$2b$10$bfbxCio.FYzVMnK/ToAkv.pZjXJ2c/zH7pC24Dx5PsqtdNsl0wvqi",
+      "role": "Admin",
+      "__v": 0
+    },
+    {
+      "_id": "664c3dab5a2c87fe28d0e4d6",
+      "name": "User",
+      "email": "user@gmail.com",
+      "password": "$2b$10$J4GoB1wMJcOIKu9sT2KpT.ZqAliBni1u/XmMS9oS/Hq/7W/EIOZL2",
+      "role": "Reader",
+      "__v": 0
+    },
+    {
+      "_id": "664c3fa7549ffae8f5e046d8",
+      "name": "Author",
+      "email": "author@gmail.com",
+      "password": "$2b$10$cVm83MPhvGrnspdHmsMSo.T2.VhjIBsw20gcEeRq4s3VxmAZY8c9S",
+      "role": "Author",
+      "__v": 0
+    },
+    {
+      "_id": "664c7063005f740cfd8bb4cd",
+      "name": "User 3",
+      "email": "user3@gmail.com",
+      "password": "$2b$10$SDqyLo3OS4ghdwC26zJlw.PmMVZj1QJRSlyVnf3bl/4uTjQo/I5i2",
+      "role": "Author",
+      "__v": 0
+    },
+    {
+      "_id": "664d745fb34af405c5650995",
+      "name": "User 5",
+      "email": "user5@gmail.com",
+      "password": "$2b$10$7IzSRlfoUqRBu6GfJJx9he8IyOQFGfuH5oc.7Y4Gu6eOD64rywbna",
+      "role": "Reader",
+      "__v": 0
+    },
+    {
+      "_id": "664d74e5b34af405c565099c",
+      "name": "Amd",
+      "email": "amd@gmail.com",
+      "password": "$2b$10$jEss9LS9qPgXWsP7aDQIwOtCLacgsZSbKFrND..KbJmupWTOPJ0Ai",
+      "role": "Reader",
+      "__v": 0
+    }
     ]
   }
   ```

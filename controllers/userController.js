@@ -30,7 +30,7 @@ class Users{
           });
       
           let token=await jwt.sign({id:user._id},process.env.JWT_SECRET,{expiresIn:5*60*60});
-          await redisClient.set(req._remoteAddress,token,{EX:5});
+          await redisClient.set(req._remoteAddress,token,{EX:15*60});
           if (user) {
             res.status(201).json({
               _id: user._id,

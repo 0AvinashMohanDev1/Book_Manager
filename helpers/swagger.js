@@ -13,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:3000',
+        url: 'https://bookmanager-production-2c6f.up.railway.app',
       },
     ],
   },
