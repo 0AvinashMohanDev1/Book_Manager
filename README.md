@@ -1,4 +1,3 @@
-Here is the updated README file with the project overview included:
 
 ---
 
@@ -287,8 +286,8 @@ Access the API documentation here: [Swagger UI](http://localhost:3000/api-docs/#
 
 ---
 
-Thank you for visiting. 
-For any suggestion: 
-Please reach out to me via:
-Mobile: 8187939429 / 9792190895
-Email: avinashmohandev@gmail.com
+### Thank you for visiting. 
+- **For any suggestion:** 
+- Please reach out to me via:
+- Mobile: 8187939429 / 9792190895
+- Email: avinashmohandev@gmail.com
