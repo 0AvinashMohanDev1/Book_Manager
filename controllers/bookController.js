@@ -46,6 +46,9 @@ class Books{
     static async searchBook(req,res){
       try {
         let query=req.query;
+        for(let key in query){
+          query[key]=query[key].trim().toLowerCase();
+        }
         let books=await Book.find(query);
         res.status(200).json(books);
         
@@ -73,7 +76,7 @@ class Books{
             return res.send("coverPage is required");
           }
           data.title=data.title.toLowerCase();
-          data.author=data.title.toLowerCase();
+          data.author=data.author.toLowerCase();
           const book = new Book({
             title:data.title,
             author:data.author,
